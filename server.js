@@ -17,17 +17,18 @@ const bookmarkSchema = new mongoose.Schema({
     url: { 
         type: String, 
         required: true 
+},
 
-        website: { 
+        web: { 
         type: String, 
         required: true 
-    },
+},
 
-    },
     tanggal_disimpan: { 
         type: Date, 
         default: Date.now 
     }
 });
+
 
 const Bookmark = mongoose.model('Bookmark', bookmarkSchema);
