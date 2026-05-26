@@ -32,3 +32,24 @@ const bookmarkSchema = new mongoose.Schema({
 
 
 const Bookmark = mongoose.model('Bookmark', bookmarkSchema);
+app.post('/bookmarks', async (req, res) => {
+    try {
+        
+        const { judul, url, web } = req.body;
+        
+        const bookmarkBaru = new Bookmark({
+            judul: judul,
+            url: url,
+            web: web
+        });
+        
+        await bookmarkBaru.save(); 
+        
+        res.status(201).json({ 
+            pesan: "Bookmark berhasil disimpan!", 
+            data: bookmarkBaru 
+        });
+    } catch (error) {
+        res.status(400).json({ pesan: "Gagal menyimpan bookmark", error: error.message });
+    }
+});
