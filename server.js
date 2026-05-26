@@ -53,3 +53,16 @@ app.post('/bookmarks', async (req, res) => {
         res.status(400).json({ pesan: "Gagal menyimpan bookmark", error: error.message });
     }
 });
+app.get('/bookmarks', async (req, res) => {
+    try {
+        const semuaBookmark = await Bookmark.find().sort({ tanggal_disimpan: -1 });
+        
+        res.status(200).json({ 
+            pesan: "Ini daftar bookmark :", 
+            total_data: semuaBookmark.length,
+            data: semuaBookmark 
+        });
+    } catch (error) {
+        res.status(500).json({ pesan: "Gagal mengambil data" });
+    }
+});
