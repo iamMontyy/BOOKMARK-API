@@ -48,7 +48,7 @@ app.post('/bookmarks', async (req, res) => {
             data: bookmarkBaru 
         });
     } catch (error) {
-        res.status(400).json({ pesan: "Gagal menyimpan bookmark link", error: error.message });
+        res.status(400).json({ pesan: "Gagal menyimpan bookmark", error: error.message });
     }
 });
 app.get('/bookmarks', async (req, res) => {
@@ -62,5 +62,24 @@ app.get('/bookmarks', async (req, res) => {
         });
     } catch (error) {
         res.status(500).json({ pesan: "Gagal mengambil data" });
+    }
+});
+app.put('/bookmarks/:id', async (req, res) => {
+    try {
+        const idBookmark = req.params.id; 
+        const dataUbah = req.body;      
+
+        const bookmarkDiupdate = await Bookmark.findByIdAndUpdate(idBookmark, dataUbah, { new: true });
+        
+        if (!bookmarkDiupdate) {
+            return res.status(404).json({ pesan: "Bookmark tidak ditemukan" });
+        }
+        
+        res.status(200).json({ 
+            pesan: "Bookmark berhasil diperbarui!", 
+            data: bookmarkDiupdate 
+        });
+    } catch (error) {
+        res.status(400).json({ pesan: "Gagal memperbarui data" });
     }
 });
