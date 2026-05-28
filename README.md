@@ -1,2 +1,2 @@
 # BOOKMARK-API
-Proyek kecil ke sekian
+Proyek belajar
