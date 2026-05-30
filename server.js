@@ -83,3 +83,21 @@ app.put('/bookmarks/:id', async (req, res) => {
         res.status(400).json({ pesan: "Gagal memperbarui data" });
     }
 });
+app.delete('/bookmarks/:id', async (req, res) => {
+    try {
+        const idBookmark = req.params.id;
+        
+        const bookmarkDihapus = await Bookmark.findByIdAndDelete(idBookmark);
+        
+        if (!bookmarkDihapus) {
+            return res.status(404).json({ pesan: "Bookmark tidak ditemukan" });
+        }
+        
+        res.status(200).json({ pesan: "Bookmark berhasil dihapus secara permanen!" });
+    } catch (error) {
+        res.status(500).json({ pesan: "Gagal menghapus data" });
+    }
+});
+app.listen(PORT, () => {
+    console.log(`Server Bookmark berjalan di http://localhost:${PORT}`);
+});
