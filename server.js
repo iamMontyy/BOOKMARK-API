@@ -93,7 +93,7 @@ app.delete('/bookmarks/:id', async (req, res) => {
             return res.status(404).json({ pesan: "Bookmark tidak ditemukan" });
         }
         
-        res.status(200).json({ pesan: "Bookmark berhasil dihapus secara permanen!" });
+        res.status(200).json({ pesan: "Bookmark berhasil dihapus !" });
     } catch (error) {
         res.status(500).json({ pesan: "Gagal menghapus data" });
     }
