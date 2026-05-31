@@ -99,5 +99,5 @@ app.delete('/bookmarks/:id', async (req, res) => {
     }
 });
 app.listen(PORT, () => {
-    console.log(`Server Bookmark berjalan di http://localhost:${PORT}`);
+    console.log(`Server berjalan di http://localhost:${PORT}`);
 });
