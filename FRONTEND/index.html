@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>bookmarks</h1>
+            <span class="count" id="count">0 saved</span>
+        </header>
+
+        <form id="form-bookmark">
+            <div class="input-row">
+                <input type="text" id="input-judul" placeholder="title" autocomplete="off" />
+                <input type="text" id="input-url" placeholder="url" autocomplete="off" />
+                <input type="text" id="input-web" placeholder="website / category" autocomplete="off" />
+                <button type="submit" id="btn-submit">save</button>
+            </div>
+        </form>
+
+        <div class="filter-row">
+            <input type="text" id="search" placeholder="search..." autocomplete="off" />
+        </div>
+
+        <div id="list-bookmark"></div>
+    </div>
+
+    <!-- Modal Edit -->
+    <div id="modal-overlay" class="hidden">
+        <div class="modal">
+            <p class="modal-label">edit bookmark</p>
+            <input type="text" id="edit-judul" placeholder="title" />
+            <input type="text" id="edit-url" placeholder="url" />
+            <input type="text" id="edit-web" placeholder="website / category" />
+            <div class="modal-actions">
+                <button id="btn-cancel">cancel</button>
+                <button id="btn-save-edit">save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
