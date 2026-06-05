@@ -57,7 +57,7 @@ app.post('/bookmarks', async (req, res) => {
         await bookmarkBaru.save(); 
         
         res.status(201).json({ 
-            pesan: "Bookmark berhasil disimpan!", 
+            pesan: "link Bookmark berhasil disimpan!", 
             data: bookmarkBaru 
         });
     } catch (error) {
