@@ -32,7 +32,7 @@ html, body {
     padding: 60px 24px 80px;
 }
 
-/* Header */
+
 header {
     display: flex;
     align-items: baseline;
@@ -52,7 +52,7 @@ header h1 {
     color: var(--muted);
 }
 
-/* Form */
+
 #form-bookmark {
     margin-bottom: 20px;
 }
@@ -102,7 +102,7 @@ header h1 {
     opacity: 0.85;
 }
 
-/* Filter */
+
 .filter-row {
     margin-bottom: 28px;
 }
@@ -129,11 +129,11 @@ header h1 {
     width: 260px;
 }
 
-/* Bookmark list */
+
 #list-bookmark {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 5px;
 }
 
 .bookmark-item {
@@ -207,7 +207,7 @@ header h1 {
     white-space: nowrap;
 }
 
-/* Actions */
+
 .actions {
     display: flex;
     gap: 6px;
@@ -238,7 +238,7 @@ header h1 {
     border-color: var(--danger);
 }
 
-/* Empty state */
+
 .empty {
     color: var(--muted);
     font-size: 12px;
@@ -246,7 +246,7 @@ header h1 {
     text-align: center;
 }
 
-/* Modal */
+
 #modal-overlay {
     position: fixed;
     inset: 0;
@@ -334,7 +334,7 @@ header h1 {
     opacity: 0.85;
 }
 
-/* Toast */
+
 .toast {
     position: fixed;
     bottom: 28px;
@@ -359,7 +359,7 @@ header h1 {
     opacity: 0;
 }
 
-/* Scrollbar */
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
