@@ -103,10 +103,10 @@ app.delete('/bookmarks/:id', async (req, res) => {
         const bookmarkDihapus = await Bookmark.findByIdAndDelete(idBookmark);
         
         if (!bookmarkDihapus) {
-            return res.status(404).json({ pesan: "Bookmark tidak ditemukan" });
+            return res.status(404).json({ pesan: "Link Bookmark tidak ditemukan" });
         }
         
-        res.status(200).json({ pesan: "Bookmark berhasil dihapus !" });
+        res.status(200).json({ pesan: "Link Bookmark berhasil dihapus !" });
     } catch (error) {
         res.status(500).json({ pesan: "Gagal menghapus data" });
     }
