@@ -61,7 +61,7 @@ app.post('/bookmarks', async (req, res) => {
             data: bookmarkBaru 
         });
     } catch (error) {
-        res.status(400).json({ pesan: "Gagal menyimpan link bookmark", error: error.message });
+        res.status(400).json({ pesan: "Gagal menyimpan Link bookmark", error: error.message });
     }
 });
 app.get('/bookmarks', async (req, res) => {
