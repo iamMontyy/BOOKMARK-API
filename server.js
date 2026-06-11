@@ -85,7 +85,7 @@ app.put('/bookmarks/:id', async (req, res) => {
         const bookmarkDiupdate = await Bookmark.findByIdAndUpdate(idBookmark, dataUbah, { new: true });
         
         if (!bookmarkDiupdate) {
-            return res.status(404).json({ pesan: "Bookmark tidak ditemukan" });
+            return res.status(404).json({ pesan: "Link Bookmark tidak ditemukan" });
         }
         
         res.status(200).json({ 
