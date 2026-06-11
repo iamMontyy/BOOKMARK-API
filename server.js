@@ -89,7 +89,7 @@ app.put('/bookmarks/:id', async (req, res) => {
         }
         
         res.status(200).json({ 
-            pesan: "Bookmark berhasil diperbarui!", 
+            pesan: "Link Bookmark berhasil diperbarui!", 
             data: bookmarkDiupdate 
         });
     } catch (error) {
