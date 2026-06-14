@@ -74,7 +74,7 @@ app.get('/bookmarks', async (req, res) => {
             data: semuaBookmark 
         });
     } catch (error) {
-        res.status(500).json({ pesan: "Gagal mengambil data" });
+        res.status(500).json({ pesan: "Gagal mengambil data Link" });
     }
 });
 app.put('/bookmarks/:id', async (req, res) => {
